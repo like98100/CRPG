@@ -1,0 +1,175 @@
+{
+  "cards": [
+    {
+      "CardNum": 0,
+      "CardName": "비어있는 카드",
+      "Mp": 0.0,
+      "Cooldown": 0.0,
+      "currCooldown": 0.0,
+      "Function": "비어있는 카드 전용 데이터입니다.",
+      "Image": "blank"
+    },
+    {
+      "CardNum": 1,
+      "CardName": "회복",
+      "Mp": 3.0,
+      "Cooldown": 5.0,
+      "currCooldown": 0.0,
+      "Function": "체력을 5 회복합니다.",
+      "Image": "Spell21"
+    },
+    {
+      "CardNum": 2,
+      "CardName": "마나 회복",
+      "Mp": 0.0,
+      "Cooldown": 15.0,
+      "currCooldown": 0.0,
+      "Function": "마나를 5 회복합니다.",
+      "Image": "Spell22"
+    },
+    {
+      "CardNum": 3,
+      "CardName": "빨리 뽑기",
+      "Mp": 5.0,
+      "Cooldown": 20.0,
+      "currCooldown": 0.0,
+      "Function": "카드를 세 장 뽑습니다.",
+      "Image": "Spell23"
+    },
+    {
+      "CardNum": 4,
+      "CardName": "단검 투척",
+      "Mp": 2.0,
+      "Cooldown": 5.0,
+      "currCooldown": 0.0,
+      "Function": "단검(1)을 1개 던집니다.",
+      "Image": "Weapon1"
+    },
+    {
+      "CardNum": 5,
+      "CardName": "가벼운 발걸음",
+      "Mp": 1.0,
+      "Cooldown": 7.0,
+      "currCooldown": 0.0,
+      "Function": "3초 동안 이동속도가 35% 증가합니다.",
+      "Image": "Spell34"
+    },
+    {
+      "CardNum": 6,
+      "CardName": "파멸의 일격",
+      "Mp": 7.0,
+      "Cooldown": 20.0,
+      "currCooldown": 0.0,
+      "Function": "다음 기본 공격이 최대 체력의 20%의 대미지를 줍니다.",
+      "Image": "Weapon5-1"
+    },
+    {
+      "CardNum": 7,
+      "CardName": "재빠른 공격",
+      "Mp": 4.0,
+      "Cooldown": 10.0,
+      "currCooldown": 0.0,
+      "Function": "5초동안 공격 속도가 50% 증가합니다.",
+      "Image": "spell01"
+    },
+    {
+      "CardNum": 8,
+      "CardName": "기본 카드 8",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 8입니다.",
+      "Image": "Spell34"
+    },
+    {
+      "CardNum": 9,
+      "CardName": "기본 카드 9",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 9입니다.",
+      "Image": "Weapon7"
+    },
+    {
+      "CardNum": 10,
+      "CardName": "기본 카드 10",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 10입니다.",
+      "Image": "Weapon7"
+    },
+    {
+      "CardNum": 11,
+      "CardName": "기본 카드 11",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 11입니다.",
+      "Image": "Spell34"
+    },
+    {
+      "CardNum": 12,
+      "CardName": "기본 카드 12",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 12입니다.",
+      "Image": "Spell33"
+    },
+    {
+      "CardNum": 13,
+      "CardName": "기본 카드 13",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 13입니다.",
+      "Image": "Spell32"
+    },
+    {
+      "CardNum": 14,
+      "CardName": "기본 카드 14",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 14입니다.",
+      "Image": "Spell11"
+    },
+    {
+      "CardNum": 15,
+      "CardName": "기본 카드 15",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 15입니다.",
+      "Image": "Spel44"
+    },
+    {
+      "CardNum": 16,
+      "CardName": "기본 카드 16",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 16입니다.",
+      "Image": "Spel43"
+    },
+    {
+      "CardNum": 17,
+      "CardName": "기본 카드 17",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 17입니다.",
+      "Image": "Spel42"
+    },
+    {
+      "CardNum": 18,
+      "CardName": "기본 카드 18",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 18입니다.",
+      "Image": "Spel41"
+    }
+  ]
+}

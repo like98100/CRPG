@@ -1,0 +1,176 @@
+{
+
+  "cards": [
+    {
+      "CardNum": "-2",
+      "CardName": "개발자 전용 카드",
+      "Mp": 1.0,
+      "Cooldown": 5.0,
+      "currCooldown": 0.0,
+      "Function": "텍스트를 확인하기 위한 카드입니다.",
+      "Image": "None"
+    },
+    {
+      "CardNum": "0",
+      "CardName": "기본 카드 1",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 1입니다.",
+      "Image": "Spel41"
+    },
+    {
+      "CardNum": "1",
+      "CardName": "기본 카드 2",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 2입니다.",
+      "Image": "Spel42"
+    },
+    {
+      "CardNum": "2",
+      "CardName": "기본 카드 3",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 3입니다.",
+      "Image": "Spel43"
+    },
+    {
+      "CardNum": "3",
+      "CardName": "기본 카드 4",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 4입니다.",
+      "Image": "Spel44"
+    },
+    {
+      "CardNum": "4",
+      "CardName": "기본 카드 5",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 5입니다.",
+      "Image": "Spell11"
+    },
+    {
+      "CardNum": "5",
+      "CardName": "기본 카드 6",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 6입니다.",
+      "Image": "Spell32"
+    },
+    {
+      "CardNum": "6",
+      "CardName": "기본 카드 7",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 7입니다.",
+      "Image": "spell33"
+    },
+    {
+      "CardNum": "7",
+      "CardName": "기본 카드 8",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 8입니다.",
+      "Image": "Spell34"
+    },
+    {
+      "CardNum": "8",
+      "CardName": "기본 카드 9",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 9입니다.",
+      "Image": "Weapon7"
+    },
+    {
+      "CardNum": "9",
+      "CardName": "기본 카드 10",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 10입니다.",
+      "Image": "Weapon7"
+    },
+    {
+      "CardNum": "10",
+      "CardName": "기본 카드 11",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 11입니다.",
+      "Image": "Spell34"
+    },
+    {
+      "CardNum": "11",
+      "CardName": "기본 카드 12",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 12입니다.",
+      "Image": "Spell33"
+    },
+    {
+      "CardNum": "12",
+      "CardName": "기본 카드 13",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 13입니다.",
+      "Image": "Spell32"
+    },
+    {
+      "CardNum": "13",
+      "CardName": "기본 카드 14",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 14입니다.",
+      "Image": "Spell11"
+    },
+    {
+      "CardNum": "14",
+      "CardName": "기본 카드 15",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 15입니다.",
+      "Image": "Spel44"
+    },
+    {
+      "CardNum": "15",
+      "CardName": "기본 카드 16",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 16입니다.",
+      "Image": "Spel43"
+    },
+    {
+      "CardNum": "16",
+      "CardName": "기본 카드 17",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 17입니다.",
+      "Image": "Spel42"
+    },
+    {
+      "CardNum": "17",
+      "CardName": "기본 카드 18",
+      "Mp": 1.100000023841858,
+      "Cooldown": 5.100000023841858,
+      "currCooldown": 0.100000023841858,
+      "Function": "기본 카드 18입니다.",
+      "Image": "Spel41"
+    }
+  ]
+}

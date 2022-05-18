@@ -1,0 +1,49 @@
+tree("Root")
+	fallback
+		tree("IsDead")
+		parallel
+			repeat mute tree("IsRange")
+			repeat mute tree("IsDanger")
+
+tree("IsDead")
+	fallback
+		while dead
+			sequence
+				GetDead
+				Succeed
+
+		while not dead
+			sequence
+				GetDead
+				Fail
+
+tree("IsRange")
+	fallback
+		while isRange
+			sequence
+				Attack
+				Succeed
+
+		while not isRange
+			sequence
+				Attack
+				Fail
+
+tree("IsDanger")
+	fallback
+		while isDanger
+			sequence
+				tree("Run")
+		while not isDanger
+			sequence
+				tree("Chase")
+
+tree("Chase")
+	sequence
+		SetDestination_Player
+		MoveToDestination
+
+tree("Run")
+	sequence
+		SetDestination_Random
+		MoveToDestination

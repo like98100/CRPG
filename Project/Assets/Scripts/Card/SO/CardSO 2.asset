@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162bbd551ba9cf64495e24851baca8c6, type: 3}
+  m_Name: CardSO 2
+  m_EditorClassIdentifier: 
+  cards:
+  - CardNum: 0
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 1"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 1\uC785\uB2C8\uB2E4."
+    Image: Spel41
+  - CardNum: 1
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 2"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 2\uC785\uB2C8\uB2E4."
+    Image: Spel42
+  - CardNum: 2
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 3"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 3\uC785\uB2C8\uB2E4."
+    Image: Spel43
+  - CardNum: 3
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 4"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 4\uC785\uB2C8\uB2E4."
+    Image: Spel44
+  - CardNum: 4
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 5"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 5\uC785\uB2C8\uB2E4."
+    Image: Spell11
+  - CardNum: 5
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 6"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 6\uC785\uB2C8\uB2E4."
+    Image: Spell32
+  - CardNum: 6
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 7"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 7\uC785\uB2C8\uB2E4."
+    Image: spell33
+  - CardNum: 7
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 8"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 8\uC785\uB2C8\uB2E4."
+    Image: Spell34
+  - CardNum: 8
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 9"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 9\uC785\uB2C8\uB2E4."
+    Image: Weapon7
+  - CardNum: 9
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 10"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 10\uC785\uB2C8\uB2E4."
+    Image: Weapon7
+  - CardNum: 10
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 11"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 11\uC785\uB2C8\uB2E4."
+    Image: Spell34
+  - CardNum: 11
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 12"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 12\uC785\uB2C8\uB2E4."
+    Image: Spell33
+  - CardNum: 12
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 13"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 13\uC785\uB2C8\uB2E4."
+    Image: Spell32
+  - CardNum: 13
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 14"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 14\uC785\uB2C8\uB2E4."
+    Image: Spell11
+  - CardNum: 14
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 15"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 15\uC785\uB2C8\uB2E4."
+    Image: Spel44
+  - CardNum: 15
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 16"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 16\uC785\uB2C8\uB2E4."
+    Image: Spel43
+  - CardNum: 16
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 17"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 17\uC785\uB2C8\uB2E4."
+    Image: Spel42
+  - CardNum: 17
+    CardName: "\uAE30\uBCF8 \uCE74\uB4DC 18"
+    Mp: 1
+    Cooldown: 5.1
+    currCooldown: 0.100000024
+    Function: "\uAE30\uBCF8 \uCE74\uB4DC 18\uC785\uB2C8\uB2E4."
+    Image: Spel41

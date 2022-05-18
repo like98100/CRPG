@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - EnemyWeapon
+  - EnemyBody
+  - EnemyLeg
+  - EnemyHead
+  - Enemy
+  - Projectile
+  - PlayerLeg
+  - PlayerHead
+  - PlayerWeapon
+  - PlayerBody
+  - Ground
+  - FxTemporaire
+  - Panel
+  - Weapon
+  - Block
+  - InvenCard
+  - PlayerCard
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Character
+  - Background
+  - Wall
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Entity
+    uniqueID: 4277070543
+    locked: 0
+  - name: Card
+    uniqueID: 691757483
+    locked: 0
+  - name: UI
+    uniqueID: 262895485
+    locked: 0
