@@ -40,6 +40,21 @@ public class CardFunction : MonoBehaviour
         onHit = new bool[] {false, false};
     }
 
+    public bool GetBurfEntity(int idx)
+    {
+        return burfEntity[idx];
+    }
+
+    public int GetBurfEntityCount()
+    {
+        return burfEntity.Count;
+    }
+
+    public string GetBurfList(int idx)
+    {
+        return burfList[idx];
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -158,13 +173,13 @@ public class CardFunction : MonoBehaviour
                 {
                     if(isPlayer)
                     {
-                        if (player.player.Hp + 5.0f < player.player.MaxHp) player.player.Hp += 5.0f;
+                        if (player.player.Hp + Damage.SetDamage(-5.0f, true) < player.player.MaxHp) player.player.Hp += Damage.SetDamage(-5.0f, true);
                         else player.player.Hp = player.player.MaxHp;
                         //Debug.Log("플레이어가 체력을 회복했습니다.");
                     }
                     else
                     {
-                        if (enemy.monster.mons[enemy.GetEnemyNum()].Hp + 5.0f <  enemy.monster.mons[enemy.GetEnemyNum()].MaxHp) enemy.monster.mons[enemy.GetEnemyNum()].Hp += 5.0f;
+                        if (enemy.monster.mons[enemy.GetEnemyNum()].Hp + Damage.SetDamage(-5.0f, false) <  enemy.monster.mons[enemy.GetEnemyNum()].MaxHp) enemy.monster.mons[enemy.GetEnemyNum()].Hp += Damage.SetDamage(-5.0f, false);
                         else enemy.monster.mons[enemy.GetEnemyNum()].Hp = enemy.monster.mons[enemy.GetEnemyNum()].MaxHp;
                         //Debug.Log("적이 체력을 회복했습니다.");
                     }
@@ -174,13 +189,13 @@ public class CardFunction : MonoBehaviour
                 {
                     if (isPlayer)
                     {
-                        if (player.player.Mp + 5.0f < player.player.MaxMp) player.player.Mp += 5.0f;
+                        if (player.player.Mp + Damage.SetDamage(-5.0f, true) < player.player.MaxMp) player.player.Mp += Damage.SetDamage(-5.0f, true);
                         else player.player.Mp = player.player.MaxMp;
                         //Debug.Log("플레이어가 마나를 회복했습니다.");
                     }
                     else
                     {
-                        if (enemy.monster.mons[enemy.GetEnemyNum()].Mp + 5.0f < enemy.monster.mons[enemy.GetEnemyNum()].MaxMp) enemy.monster.mons[enemy.GetEnemyNum()].Mp += 5.0f;
+                        if (enemy.monster.mons[enemy.GetEnemyNum()].Mp + Damage.SetDamage(-5.0f, false) < enemy.monster.mons[enemy.GetEnemyNum()].MaxMp) enemy.monster.mons[enemy.GetEnemyNum()].Mp += Damage.SetDamage(-5.0f, false);
                         else enemy.monster.mons[enemy.GetEnemyNum()].Mp = enemy.monster.mons[enemy.GetEnemyNum()].MaxMp;
                         //Debug.Log("적이 마나를 회복했습니다.");
                     }

@@ -126,7 +126,7 @@ public class Projectile : MonoBehaviour
         if (isPlayer && (collision.gameObject.tag == "EnemyBody"))// || collision.gameObject.tag == "EnemyLeg" || collision.gameObject.tag == "EnemyHead")
         {
             //Debug.Log("단검 타격 성공");
-            enemy.monster.mons[enemy.GetEnemyNum()].Hp -= damage;
+            enemy.monster.mons[enemy.GetEnemyNum()].Hp -= Damage.SetDamage(damage, true);
             if (enemy.monster.mons[enemy.GetEnemyNum()].Hp < 0) enemy.monster.mons[enemy.GetEnemyNum()].Hp = 0;
             //Instantiate(particleObject_Inst, enemyObject.transform.position, enemyObject.transform.rotation);
             particleObject_Inst = Instantiate(particleObject, new Vector3(enemy.monster.mons[enemy.GetEnemyNum()].monsterPosX_f, enemy.monster.mons[enemy.GetEnemyNum()].monsterPosY_f, 0), Quaternion.identity);
@@ -138,7 +138,7 @@ public class Projectile : MonoBehaviour
         else if(!isPlayer && (collision.gameObject.tag == "PlayerBody"))
         {
             //Debug.Log("적 단검 타격 성공");
-            player.player.Hp -= damage;
+            player.player.Hp -= Damage.SetDamage(damage, false);
             if (player.player.Hp < 0) player.player.Hp = 0;
             //Instantiate(particleObject_Inst, enemyObject.transform.position, enemyObject.transform.rotation);
             particleObject_Inst = Instantiate(particleObject, new Vector3(player.player.playerPosX_f, player.player.playerPosY_f, 0), Quaternion.identity);

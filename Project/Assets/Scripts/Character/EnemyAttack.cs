@@ -34,14 +34,14 @@ public class EnemyAttack : MonoBehaviour
             {
                 Debug.Log("적군의 파멸의 일격!");
                 float sum = player.player.MaxHp * 0.2f;
-                player.player.Hp -= sum;
+                player.player.Hp -= Damage.SetDamage(sum, false);
                 CardFunction.SetOnHit(false, false);
 
                 particleObject_Inst = Instantiate(criticalParticleObject, playerObject.transform.position, playerObject.transform.rotation);
             }
             else
             {
-                player.player.Hp -= enemy.monster.mons[enemy.GetEnemyNum()].nAttackDmg;
+                player.player.Hp -= Damage.SetDamage(enemy.monster.mons[enemy.GetEnemyNum()].nAttackDmg, false);
                 particleObject_Inst = Instantiate(particleObject, playerObject.transform.position, playerObject.transform.rotation);
             }
 

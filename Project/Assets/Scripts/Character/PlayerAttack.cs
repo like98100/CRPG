@@ -42,14 +42,14 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log("파멸의 일격!");
                 
                 float sum = enemy.monster.mons[enemy.GetEnemyNum()].MaxHp * 0.2f;
-                enemy.monster.mons[enemy.GetEnemyNum()].Hp -= sum;
+                enemy.monster.mons[enemy.GetEnemyNum()].Hp -= Damage.SetDamage(sum, true);
                 CardFunction.SetOnHit(true, false);
 
                 particleObject_Inst = Instantiate(criticalParticleObject, enemyObject.transform.position, enemyObject.transform.rotation);
             }
             else
             {
-                enemy.monster.mons[enemy.GetEnemyNum()].Hp -= act.player.nAttackDmg;
+                enemy.monster.mons[enemy.GetEnemyNum()].Hp -= Damage.SetDamage(act.player.nAttackDmg, true);
                 particleObject_Inst = Instantiate(particleObject, enemyObject.transform.position, enemyObject.transform.rotation);
             }
 

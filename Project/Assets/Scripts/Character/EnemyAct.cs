@@ -205,11 +205,11 @@ public class EnemyAct : MonoBehaviour
                 {
                     destination = Random.insideUnitSphere * 4.0f;
 
-                    if (destination.x < -6.5f) destination.x = -6.5f;
-                    else if (destination.x > 6.95f) destination.x = 6.95f;
+                    if (destination.x < -5.5f) destination.x = -5.5f;
+                    else if (destination.x > 5.95f) destination.x = 5.95f;
 
-                    if (destination.z < -3.0f) destination.z = -3.0f;
-                    else if (destination.z > 3.8f) destination.z = 3.8f;
+                    if (destination.z < -2.5f) destination.z = -2.5f;
+                    else if (destination.z > 2.5f) destination.z = 2.5f;
                 }
 
                 destination.y = 0.0f;
