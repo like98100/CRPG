@@ -178,24 +178,18 @@ public class EnemyAct : MonoBehaviour
     void MoveToDestination()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("dead")) return;
+
             var task = Task.current;
             var delta = destination - monsterObject.transform.position;
-        //var delta = destination - new Vector3(monster.mons[1].monsterPosX_f, monster.mons[1].monsterPosY_f, 0.0f);
-
-        //if (transform.position != destination)
-        if (!isRange && !animator.GetCurrentAnimatorStateInfo(0).IsName("nAttack"))
+        if (!isRange && !animator.GetCurrentAnimatorStateInfo(0).IsName("nAttack") && !animator.GetCurrentAnimatorStateInfo(0).IsName("die"))
         {
             var velocity = delta.normalized * monster.mons[enemyNum].movementspeed;
-            //transform.position += velocity * Time.deltaTime;
-            monsterObject.transform.Translate(velocity * Time.deltaTime);
 
-                //var newDelta = destination = -transform.position;
-                //if (Vector3.Dot(newDelta, delta) < 0.0f)
-                //{
-                //    transform.position = destination;
-                //}
+            monsterObject.transform.Translate(velocity * Time.deltaTime);
             monster.mons[enemyNum].monsterPosX_f = monsterObject.transform.position.x;
-            monster.mons[enemyNum].monsterPosY_f = monsterObject.transform.position.z; // 2D->3D 월드로 이전하면서 가독성 문제 발생(변수 수정할 것)
+            monster.mons[enemyNum].monsterPosY_f = monsterObject.transform.position.z; // 2D->3D 월드로 이전하면서 가독성 문제 발생(변수 수정 필요)
+
+ 
 
             if (!isDanger) destination = new Vector3(player.player.playerPosX_f, 0f, player.player.playerPosY_f);
             else
@@ -234,6 +228,8 @@ public class EnemyAct : MonoBehaviour
     [Task]
     bool SetDestination_Random()
     {
+        if (animator.GetBool("dead")) return true;
+
         if ((monsterObject.transform.position.x - destination.x < 0.01f || monsterObject.transform.position.x - destination.x > -0.01f)
             && (monsterObject.transform.position.z - destination.z < 0.01f || monsterObject.transform.position.z - destination.z > -0.01f))
         {
@@ -365,11 +361,11 @@ public class EnemyAct : MonoBehaviour
         else isDanger = false;
 
         time += Time.deltaTime;
-        if (time >= skillCooldown) UseCard();
+        if (time >= skillCooldown && !animator.GetCurrentAnimatorStateInfo(0).IsName("die")) UseCard();
 
 
         // 항상 player를 바라본다
-        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("dead") && !animator.GetCurrentAnimatorStateInfo(0).IsName("nAttack"))
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("die") && !animator.GetCurrentAnimatorStateInfo(0).IsName("nAttack"))
         {
             if (player.player.playerPosX_f >= monster.mons[enemyNum].monsterPosX_f)
             {
@@ -402,8 +398,8 @@ public class EnemyAct : MonoBehaviour
         if (monster.mons[enemyNum].Hp == 0)
         {
             animator.SetBool("dead", true);
-            //if(monsterObject.transform.position.x < 800.0f) particleObject_Inst = Instantiate(particleObject, monsterObject.transform.position, monsterObject.transform.rotation);
-            //Destroy(particleObject_Inst, 2.5f);
+            animator.SetBool("moving", false);
+            animator.SetBool("attack", false);
             Invoke("Die", 1.0f);
             if(!victory && dead) Victory();
         }

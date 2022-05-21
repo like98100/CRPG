@@ -120,6 +120,19 @@ public class PlayerAct : MonoBehaviour
     bool defeat = false;
     [SerializeField] Panel panel;
 
+    public enum STEP
+    {
+        NONE,
+        MOVE,
+        ATTACK,
+        DEAD,
+        NUM,
+    };
+
+    STEP step = STEP.NONE;
+    STEP nextStep = STEP.NONE;
+    float stepTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -150,46 +163,81 @@ public class PlayerAct : MonoBehaviour
         panelObject = GameObject.FindWithTag("Panel");
         panel = panelObject.GetComponent<Panel>();
         isDead = false;
+
+        this.step = STEP.NONE;
+        this.nextStep = STEP.MOVE;
+        stepTimer = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("dead"))
+        stepTimer += Time.deltaTime;
+
+        // 상태 변화
+        if (this.nextStep == STEP.NONE)
         {
-            //이동(Axis ver)
-            hAxis = Input.GetAxisRaw("Horizontal");
-            vAxis = Input.GetAxisRaw("Vertical");
-            Move();
-        }
-        else
-        {
-            hAxis = 0f; vAxis = 0f;
+            switch(this.step)
+            {
+                case STEP.MOVE: // 이동 중 변하는 상태(공격, 죽음)
+                    if(Input.GetMouseButton(1))  //좌클릭 시
+                        this.nextStep = STEP.ATTACK;
+
+                    if(player.Hp == 0)  // 체력이 0이 됐을 때
+                        this.nextStep = STEP.DEAD;
+                    break;
+                case STEP.ATTACK:   // 공격 중 변하는 상태(공격 완료 후 이동, 죽음)
+                    //if (animator.GetCurrentAnimatorStateInfo(0).IsName("nAttack") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+                    if(Input.GetMouseButtonUp(1))   // 클릭 해제 시
+                        this.nextStep = STEP.MOVE;
+
+                    if (player.Hp == 0)  // 체력이 0이 됐을 때
+                        this.nextStep = STEP.DEAD;
+                    break;
+                case STEP.DEAD: // 죽은 이후엔 변하지 않음
+                    break;
+            }
         }
 
-        //Pos_Int 변경
-        if (player.playerPosX_f >= -6.5f && player.playerPosX_f < -3.75f) player.playerPosX_i = -2;
-        else if(player.playerPosX_f >= -3.75f && player.playerPosX_f < -1.0f) player.playerPosX_i = -1;
-        else if (player.playerPosX_f >= -1.1f && player.playerPosX_f < 1.6f) player.playerPosX_i = 0;
-        else if (player.playerPosX_f >= 1.6f && player.playerPosX_f < 4.26f) player.playerPosX_i = 1;
-        else if (player.playerPosX_f >= 4.26f && player.playerPosX_f <= 6.95f) player.playerPosX_i = 2;
-
-        if (player.playerPosY_f >= 2.15f && player.playerPosY_f < 3.8f) player.playerPosY_i = 2;
-        else if (player.playerPosY_f >= 0.45f && player.playerPosY_f < 2.15f) player.playerPosY_i = 1;
-        else if (player.playerPosY_f >= -1.25f && player.playerPosY_f < 0.45f) player.playerPosY_i = 0;
-        else if (player.playerPosY_f >= -3.0f && player.playerPosY_f < -1.25f) player.playerPosY_i = -1;
-
-        //공격 애니메이션 실행
-        if(Input.GetMouseButton(1))
+        // 상태가 변했을 때
+        while(this.nextStep != STEP.NONE)
         {
-            animator.SetBool("attack", true);
-            isAttack = true;
+            this.step = nextStep;
+            this.nextStep = STEP.NONE;
+            switch(this.step)
+            {
+                case STEP.MOVE:
+                    animator.SetBool("attack", false);
+                    isAttack = false;
+                    break;
+                case STEP.ATTACK:
+                    animator.SetBool("attack", true);
+                    isAttack = true;
+                    break;
+                case STEP.DEAD:
+                    animator.SetBool("dead", true);
+                    animator.SetBool("moving", false);
+                    animator.SetBool("attack", false);
+                    isAttack = false;
+
+                    break;
+            }
         }
-        else if (Input.GetMouseButtonUp(1))
+        // 반복 실행
+        switch(this.step)
         {
-            animator.SetBool("attack", false);
-            isAttack = false;
+            case STEP.MOVE:
+                //이동(Axis ver)
+                Move();
+                break;
+            case STEP.ATTACK:
+                break;
+            case STEP.DEAD:
+                Invoke("Die", 1.0f);
+                if (isDead && !defeat) Defeat();
+                break;
         }
+
 
         // 체력, 마나 감소 및 회복 확인용
         if (Input.GetKeyDown(KeyCode.Z) && player.Hp != player.MaxHp) player.Hp += 1;
@@ -197,14 +245,6 @@ public class PlayerAct : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.C) && player.Mp != player.MaxMp) player.Mp += 1;
         else if (Input.GetKeyDown(KeyCode.V) && player.Mp != 0) player.Mp -= 1;
 
-
-        if (player.Hp == 0)
-        {
-            animator.SetBool("dead", true);
-            animator.SetBool("moving", false);
-            Invoke("Die", 1.0f);
-        }
-        if (isDead && !defeat) Defeat();
     }
 
     void Die()
@@ -231,6 +271,8 @@ public class PlayerAct : MonoBehaviour
 
     void Move()
     {
+        hAxis = Input.GetAxisRaw("Horizontal");
+        vAxis = Input.GetAxisRaw("Vertical");
         moveVec = new Vector3(hAxis, 0, vAxis).normalized;
         if (hAxis == 0 && vAxis == 0) animator.SetBool("moving", false);
         else if (!isBorder && !animator.GetCurrentAnimatorStateInfo(0).IsName("nAttack"))
