@@ -31,13 +31,33 @@ public class PlayerAct : MonoBehaviour
             CharName = string.Empty;
             MaxHp = 10.0f;
             MaxMp = 10.0f;
-            Hp = 2.0f;
-            Mp = 2.0f;
+            Hp = 10.0f;
+            Mp = 10.0f;
             Weapon = "none";
             Equipment = "none";
             for (int i = 0; i < 9; i++)
             {
-                int sum = i;
+                int sum = 1;
+                    switch (i)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                            sum = 1;
+                            break;
+                        case 3:
+                            sum = 2;
+                            break;
+                        case 4:
+                        case 5:
+                            sum = 3;
+                            break;
+                        case 6:
+                        case 7:
+                        case 8:
+                            sum = 4;
+                            break;
+                    }
                 //CharDeckList.Add(sum.ToString());
                 CharDeckList.Add(sum);
             }
@@ -77,7 +97,7 @@ public class PlayerAct : MonoBehaviour
         {
             CharTypeName = typeof(CharClass_Playable).ToString();
             nAttackDmg = 1.0f;
-            nAttackSpd = 6.5f;
+            nAttackSpd = 3.5f;
         }
 
         public override void Log()
@@ -137,9 +157,9 @@ public class PlayerAct : MonoBehaviour
     void Start()
     {
         //최초 생성용
-        //player = new CharClass_Playable();
+        player = new CharClass_Playable();
         //player.Log();
-        //CreateCharJSON();
+        CreateCharJSON();
 
         //BringCharJSON();
         //player.Log();
@@ -297,9 +317,13 @@ public class PlayerAct : MonoBehaviour
 
     void CreateCharJSON()
     {
-        string playerToJsonData = playObject.GetComponent<ControlJSON>().ObjectToJson(player);      // player 클래스 내부 변수와 값들을 string으로 변환
-        playObject.GetComponent<ControlJSON>().CreateJsonFile(Application.dataPath, "Player", playerToJsonData); // data 폴더에 json 생성
-        Debug.Log("Create Player Json File.");
+        string filePath = Application.dataPath + "/Data/Player.json";
+        FileInfo fileInfo = new FileInfo(filePath);
+        if(!fileInfo.Exists)
+        {
+            string playerToJsonData = playObject.GetComponent<ControlJSON>().ObjectToJson(player);      // player 클래스 내부 변수와 값들을 string으로 변환
+            playObject.GetComponent<ControlJSON>().CreateJsonFile(Application.dataPath, "Player", playerToJsonData); // data 폴더에 json 생성
+        }
     }
 
     void BringCharJSON()
